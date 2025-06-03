@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" href="src/logo.svg">
+
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="src/logo.svg" alt="Website Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<h1>About</h1>
+<form onsubmit="updateTurn(); return false;">
+    <div style="display: flex; gap: 8px; align-items: center;">
+        <label for="turn" style="color: beige; padding-left: 60px;">Enter Turn:</label>
+        <input type="number" id="turn" name="turn" placeholder="Enter Turn" style="width: 130px;">
+        <input type="submit" value="Set Turn" style="width: 120px;">
+    </div>
+</form>
+
+<section class="about-container">
+    <table>
+        <tr>
+            <td>
+                <button class="question" onclick="showAnswer('name')">What's your name?</button>
+            </td>
+            <td>
+                <p class="response" id="name-box"></p>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <button class="question" onclick="showAnswer('nationality')">Where are you from?</button>
+            </td>
+            <td>
+                <p class="response" id="nationality-box"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="question" onclick="showAnswer('company')">Where do you work?</button>
+            </td>
+            <td>
+                <p class="response" id="company-box"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="question" onclick="showAnswer('role')">What do you do?</button>
+            </td>
+            <td>
+                <p class="response" id="role-box"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="question" onclick="showAnswer('project')">What project you are working on?</button>
+            </td>
+            <td>
+                <p class="response" id="project-box"></p>
+            </td>
+        </tr>
+    </table>
+
+
+</section>
+<footer>
+    <p>&copy; 2025 VDS. All Rights Reserved.</p>
+</footer>
+<script src="src/main.js"></script>
+</body>
+</html>

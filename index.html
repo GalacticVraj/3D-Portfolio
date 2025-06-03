@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="icon" href="src/logo.svg">
+    <style>
+    .parallax-container, .parallax {
+        width:100%; height:800px;
+        display:flex; align-items:center;
+        justify-content:center; overflow:hidden;
+        position:relative;
+    }
+    .parallax {
+        background:url('image.jpg') fixed center/cover no-repeat;
+        color:#fff; font-size:3rem;
+        text-shadow:2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .about-content img:hover {
+        transform:scale(1.1); transition:transform 0.5s ease-in-out;
+        box-shadow:0 0 20px deepskyblue; content:url("src/wolf.svg");
+    }
+    </style>
+</head>
+<body>
+
+<div class="parallax-container">
+    <div class="parallax">
+        <h1 class="portfolio-text" id="portfolio">3D <br>PORTFOLIO</h1>
+        <button id="scrollBtn">▼ Scroll Down</button>
+        <script>
+        document.getElementById("scrollBtn").onclick = function(e) {
+            e.preventDefault();
+            document.querySelector("header").scrollIntoView({behavior:"smooth"});
+        };
+        </script>
+    </div>
+</div>
+
+<header>
+    <div class="logo"><img src="src/logo.svg" alt="Website Logo"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="about-team">
+    <div class="about-content">
+        <img src="src/wolfp.svg" alt="Our Team">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>We are a group of innovators, thinkers, and creators. Each of us brings a unique perspective to the table, pushing the boundaries of what's possible.</p>
+        </div>
+    </div>
+</section>
+
+<section class="card-container" id="card-container">
+    <a href="vrajbio.html"><div class="card"><h3>Vraj Talati</h3><p>Founder</p></div></a>
+    <a href="sakshibio.html"><div class="card"><h3>Sakshi Chavda</h3><p>Team Leader</p></div></a>
+    <a href="deepbio.html"><div class="card"><h3>Deep Joshi</h3><p>Member</p></div></a>
+</section>
+
+<section class="form-container">
+    <h2>Add New Member</h2>
+    <form onsubmit="addCard();return false">
+        <div class="form-group">
+            <label for="card-title">Title</label>
+            <input type="text" id="card-title" placeholder="Enter card title">
+        </div>
+        <div class="form-group">
+            <label for="card-description">Description</label>
+            <input type="text" id="card-description" placeholder="Enter card description">
+        </div>
+        <div class="form-group">
+            <label for="card-link">Link</label>
+            <input type="url" id="card-link" placeholder="Enter card link">
+        </div>
+        <button type="submit">Add Card</button>
+    </form>
+</section>
+
+<footer><p>&copy; 2025 VDS. All Rights Reserved.</p></footer>
+
+<script>
+document.addEventListener("mousemove", e => {
+    const text = document.getElementById("portfolio");
+    let x = (e.clientX - innerWidth/2) / (innerWidth/2) * -30;
+    let y = (e.clientY - innerHeight/2) / (innerHeight/2) * 30;
+    
+    requestAnimationFrame(() => {
+        text.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+        text.style.textShadow = `${x*-1}px ${y*1}px 30px deeppink, ${x*1}px ${-y*1}px 40px deepskyblue, ${y*-1}px ${x*1}px 50px deeppink, ${-y*1}px ${-x*1}px 60px deepskyblue`;
+    });
+});
+</script>
+</body>
+</html>

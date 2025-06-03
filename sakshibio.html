@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi Chavda - Bio</title>
+    <link rel="icon" href="src/logo.svg">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<header>
+    <div class="logo"><img src="src/logo.svg" alt="Website Logo"></div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="bio-container">
+    <h1>Sakshi Chavda</h1>
+    <div id="bio-content">
+        <p><strong>Name:</strong> <span id="bio-name">Sakshi Chavda</span></p>
+        <p><strong>Date of Birth:</strong> <span id="bio-dob">September 11, 2005</span></p>
+        <p><strong>Nationality:</strong> <span id="bio-nationality">UAE</span></p>
+        <p><strong>Education:</strong></p>
+        <ul id="bio-education">
+            <li>Bachelor of Computer Science</li>
+            <li>Masters in Data Science</li>
+            <li>MicrosoftTeam Management Fundamentals</li>
+            <li>IBM Project Manager Professional</li>
+        </ul>
+        <button id="edit-bio">Edit</button>
+    </div>
+
+    <div id="bio-form" style="display:none">
+        <form onsubmit="saveBio(event)">
+            <label>Name: <input type="text" id="name" value="Sakshi Chavda"></label>
+            <label>Date of Birth: <input type="date" id="dob" value="2005-09-18"></label>
+            <label>Nationality: <input type="text" id="nationality" value="Emirate"></label>
+            <label>Education (comma separated): <input type="text" id="education" value="Bachelor of Computer Science, Machine Learning Specialization, Cybersecurity Basics, Software Engineering Certification"></label>
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+<section class="badge-showcase">
+    <h2>My Badges</h2>
+    <div class="badge-container">
+        <div class="badge-card">
+            <div class="badge-front"><img src="badges/badge1.png" alt="Google AI Essentials Badge"></div>
+            <div class="badge-back"><p>Google AI Essentials Certification</p></div>
+        </div>
+        <div class="badge-card">
+            <div class="badge-front"><img src="badges/badge3.png" alt="Google Cloud Basics Badge"></div>
+            <div class="badge-back"><p>Google Cloud Computing Fundamentals</p></div>
+        </div>
+        <div class="badge-card">
+            <div class="badge-front"><img src="badges/badge4.png" alt="Google API Gateway Badge"></div>
+            <div class="badge-back"><p>Google API Gateway Basics</p></div>
+        </div>
+    </div>
+</section>
+
+<footer><p>&copy; 2025 VDS. All Rights Reserved.</p></footer>
+<script src="src/main.js"></script>
+</body>
+</html>
